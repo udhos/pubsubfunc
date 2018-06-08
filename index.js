@@ -5,13 +5,10 @@
  * @param {!Function} The callback function.
  */
 exports.budget = (event, callback) => {
-  // The Cloud Pub/Sub Message object.
   const pubsubMessage = event.data;
 
-  // We're just going to log the message to prove that
-  // it worked.
-  console.log(Buffer.from(pubsubMessage.data, 'base64').toString());
+  console.log("data = ", Buffer.from(pubsubMessage.data, 'base64').toString());
+  console.log("attributes = ", pubsubMessage.attributes);
 
-  // Don't forget to call the callback.
   callback();
 };

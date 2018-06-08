@@ -39,7 +39,7 @@ https://cloud.google.com/billing/docs/how-to/budgets
     	budgetId 		de72f49d-779b-4945-a127-4d6ce8def0bb
     	schemaVersion		1.0 
     
-    data:
+    data: (data is a base64-encoded JSON)
     	budgetDisplayName 	"My Personal Budget"
     	alertThresholdExceeded 	0.9
     	costAmount 		140.321
@@ -48,4 +48,8 @@ https://cloud.google.com/billing/docs/how-to/budgets
     	budgetAmountType 	"SPECIFIED_AMOUNT"
     	currencyCode 		"USD"
 
+Test
+====
+
+    gcloud functions call budget --data "$(cat message.txt)"
 
